@@ -62,12 +62,12 @@ export default defineComponent({
       newDate.value = `${y}/${mo + 1}/${d}`;
     };
 
-    const uploadCreds = async (email, number, museum) => {
+    const uploadCreds = async (email, number, client) => {
       try {
         createCode();
         createDate();
 
-        const colRef = collection(db, "access", museum, "creds");
+        const colRef = collection(db, "access", client, "creds");
 
         addDoc(colRef, {
           code: code.value,
